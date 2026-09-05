@@ -1,0 +1,55 @@
+# Odoo source repository
+odoo/
+
+# PostgreSQL local database
+pgdata/
+.pgdata/
+.pgsocket/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Odoo runtime
+*.log
+*.pid
+sessions/
+filestore/
+
+# Local Odoo configuration / secrets
+odoo.conf
+*.conf
+.env
+.env.*
+
+# Database dumps
+*.sql
+*.dump
+*.backup
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Nix build outputs
+result
+result-*
+.direnv/
