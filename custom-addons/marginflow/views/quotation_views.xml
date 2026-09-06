@@ -9,9 +9,13 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="customer"/>
+                <field name="customer_id"/>
                 <field name="sales_price"/>
-                <field name="cost"/>
+                <field name="material_cost"/>
+                <field name="production_cost"/>
+                <field name="total_cost"/>
+                <field name="margin"/>
+                <field name="margin_percent"/>
             </list>
         </field>
     </record>
@@ -25,9 +29,13 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="customer"/>
+                        <field name="customer_id"/>
                         <field name="sales_price"/>
-                        <field name="cost"/>
+                        <field name="material_cost"/>
+                        <field name="production_cost"/>
+                        <field name="total_cost"/>
+                        <field name="margin"/>
+                        <field name="margin_percent"/>
                     </group>
                 </sheet>
             </form>

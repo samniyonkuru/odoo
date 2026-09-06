@@ -19,6 +19,7 @@ Simple quotation and margin management module.
     "data": [
         "security/ir.model.access.csv",
         "views/quotation_views.xml",
+        "views/partner_views.xml",
     ],
 
     "installable": True,

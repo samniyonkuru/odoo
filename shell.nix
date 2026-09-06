@@ -7,6 +7,7 @@ pkgs.mkShell {
     postgresql.pg_config
     openldap
     cyrus_sasl
+    pyright
   ];
 
   LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [

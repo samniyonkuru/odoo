@@ -1,0 +1,8 @@
+{
+  "venvPath": "/home/sam/project/erp",
+  "venv": ".venv",
+  "extraPaths": [
+    "/home/sam/project/erp/odoo"
+  ],
+  "typeCheckingMode": "basic"
+}

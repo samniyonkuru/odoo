@@ -1,0 +1,25 @@
+<odoo>
+    <!-- Root application menu -->
+    <menuitem
+        id="estate_menu_root"
+        name="Real Estate"
+        sequence="10"
+    />
+
+    <!-- Submenu -->
+    <menuitem
+        id="estate_menu_properties"
+        name="Properties"
+        parent="estate_menu_root"
+        sequence="10"
+    />
+
+    <!-- Action menu -->
+    <menuitem
+        id="estate_menu_properties_list"
+        name="Properties"
+        parent="estate_menu_properties"
+        action="test_record"
+        sequence="10"
+    />
+</odoo>
