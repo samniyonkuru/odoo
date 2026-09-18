@@ -1,11 +1,11 @@
-from odoo import models, fields
+from odoo import api, models, fields
 
 
 class RealEstate(models.Model):
     _name = "estate.property"
     _description = "Real estate Model"
 
-    active = fields.Boolean(default=True, invisible=True)
+    active = fields.Boolean(default=True)
     name = fields.Char(required=True)
     state = fields.Selection(
             [
@@ -60,3 +60,34 @@ class RealEstate(models.Model):
             string="Salesperson",
             default=lambda self: self.env.user,
             )
+
+    offer_ids = fields.One2many(
+            "estate.property.offer",
+            "property_id",
+            string="Offers",
+            )
+
+    tag_ids = fields.Many2many("estate.property.tag")
+
+    total_area = fields.Float(compute="_compute_total_area")
+
+    @api.depends("living_area", "garden_area")
+    def _compute_total_area(self):
+        for rec in self:
+            rec.total_area = rec.living_area + rec.garden_area
+
+
+    best_price = fields.Float(compute="_compute_best_price")
+
+    @api.depends("offer_ids.price")
+    def _compute_best_price(self):
+        for rec in self:
+            rec.best_price = max(rec.offer_ids.mapped("price"), default=0.0)
+
+    @api.onchange("garden")
+    def _onchange_garden(self):
+        for estate in self:
+            if not estate.garden:
+                estate.garden_area = 0
+
+            
