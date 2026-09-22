@@ -2,6 +2,7 @@
 
 pkgs.mkShell {
   packages = with pkgs; [
+    zsh
     python3
     postgresql
     postgresql.pg_config
@@ -15,6 +16,10 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    export DEVENV_NAME="root"
+    export DEVENV_NAME="odoo"
+
+    if [ -z "$ZSH_VERSION" ]; then
+      exec zsh
+    fi
   '';
 }
